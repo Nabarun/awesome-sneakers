@@ -134,14 +134,16 @@ export default class extends AbstractView {
                 if(elem.managedContentId === id) {
 
                     this.details += `
-                    <div align="center">
-                        <img src=${elem.contentNodes.SneakerImageMain.url} alt="Avatar" width="auto" >
-                        </div>
-                                <div class="card-body">
+                            <div class="col">
+                                <div align="center">
+                                    <img src=${elem.contentNodes.SneakerImageMain.url} class="img-fluid" alt="Responsive image">
+                                </div>
+                             </div>
+                             <div class="col">
                                     <h4 class="card-title">${elem.contentNodes.SneakerName.value}</h4>
                                     <p class="card-text">${elem.contentNodes.SneakerPrice.value}</p>
                                     <p class="card-text">${elem.contentNodes.SneakerDetail.value}</p>
-                                </div>
+                            </div>
                                 
                     `
                 }
@@ -152,78 +154,6 @@ export default class extends AbstractView {
             </div>`;
 
     }
-
-
-    getManagedContent(id) {
-        const serverUrl = 'http://localhost:8081/graphql'
-        const graphqlQuery = {
-            query: `{
-                        channelById{
-                            items{
-                                title
-                                managedContentId
-                                contentNodes {
-                                    bannerImage {
-                                        url
-                                    }
-                                }
-                            }
-                        }
-                    }`
-            };
-
-        // below ordinary XHR request with console.log
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.open('POST', serverUrl);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function () {
-            if (xhr.readyState === xhr.DONE) {
-                console.log(xhr.response);
-                if (xhr.status === 200) {
-                    return xhr.response;
-                    console.log(xhr.response);
-                    console.log(xhr.responseText);
-                }
-            }
-        };
-
-        xhr.send(JSON.stringify(graphqlQuery));
-
-        return {
-            "contentNodes" : {
-                "bannerImage" : {
-                    "altText" : null,
-                    "fileName" : "slack (1).jpg.png",
-                    "mediaType" : "Image",
-                    "mimeType" : "image/png",
-                    "nodeType" : "Media",
-                    "resourceUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU/content",
-                    "thumbnailUrl" : null,
-                    "title" : "Graphql Test 2 Image",
-                    "unauthenticatedUrl" : "https://wallpaperaccess.com/full/86289.jpg",
-                    "url" : "https://wallpaperaccess.com/full/86289.jpg"
-                },
-                "body" : {
-                    "nodeType" : "RichText",
-                    "value" : "This picture was sold at 2 million USD"
-                },
-                "title" : {
-                    "nodeType" : "NameField",
-                    "value" : "Graphql Test 2 News"
-                }
-            },
-            "contentUrlName" : "graphql-test-2-news",
-            "language" : "en_US",
-            "managedContentId" : "20Y1R0000008OQ9UAM",
-            "publishedDate" : "2021-03-28T17:12:57.000Z",
-            "title" : "Graphql Test 2 News",
-            "type" : "news",
-            "typeLabel" : "News",
-            "unauthenticatedUrl" : "/cms/delivery/v50.0/0DB36000000XeFRGA0/contents/20Y1R0000008OQ9UAM?oid=00D36000000JfaDEAS"
-        };
-    }
-
     async getHtml() {
         return `${this.details}`;
     }

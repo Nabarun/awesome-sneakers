@@ -9,7 +9,7 @@ export default class extends AbstractView {
                     <div class="row">
         `;
         this.setTitle("Products");
-        this.getManagedContentFromJSON();
+        this.getManagedContentFromUrl();
     }
 
     getManagedContentFromJSON() {
@@ -134,7 +134,8 @@ export default class extends AbstractView {
                 <div class="col-md-4">
                     <div class="card" style="width:18rem">
                         <div class="row no-gutters">
-                            <img src=${elem.contentNodes.SneakerImageMain.url} alt="Avatar" class="card-img-top">
+                            <img src=${elem.contentNodes.SneakerImageMain.url} class="imgfluid" alt="Responsive image">
+                           
                             <div class="card-body">
                                 <h4 class="card-title">${elem.contentNodes.SneakerName.value}</h4>
                                 <p class="card-text">${elem.contentNodes.SneakerPrice.value}</p>
@@ -166,26 +167,31 @@ export default class extends AbstractView {
                         statusText: xhr.statusText
                     };
                     if (xhr.status === 200) {
-                        let response = "";
-
-                        let managedContents = xhr.response.data.channelById[0].items;
-
-                        managedContents.forEach(elem => {
-                            response += `
-                            
-                                <div class="card" style="max-width: 500px;">
-                                    <div class="row no-gutters">
-                                          <img src=${elem.contentNodes.source.url} alt="Avatar" style="width:100%">
-                                          <div class="container">
-                                            <h4><b>${elem.title}</b></h4>
-                                            <p>${elem.contentNodes.altText.value}</p>
-                                          </div>
-                                </div>
-                            
-                            `
-                        });
-                        //document.getElementById("app").innerHTML = response;
                         resolve(xhr.response);
+                        let managedContents = JSON.parse(json);
+
+                        alert(managedContents);
+                        managedContents.items.forEach(elem => {
+                            this.resp += `
+                                <div class="col-md-4">
+                                    <div class="card" style="width:18rem">
+                                        <div class="row no-gutters">
+                                            <img src=${elem.contentNodes.SneakerImageMain.url} class="imgfluid" alt="Responsive image">
+                                           
+                                            <div class="card-body">
+                                                <h4 class="card-title">${elem.contentNodes.SneakerName.value}</h4>
+                                                <p class="card-text">${elem.contentNodes.SneakerPrice.value}</p>
+                                                <a href="#productDetails/${elem.managedContentId}" class="btn btn-primary">See Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                `
+                        });
+
+                        this.resp += `
+                                </div>
+                            </div>`;
                     }
                 }
             };
