@@ -1,7 +1,8 @@
-import Dashboard from "./views/Dashboard.js";
 import Posts from "./views/Posts.js";
 import PostView from "./views/PostView.js";
 import Settings from "./views/Settings.js";
+import Products from "./views/ProductCatalog.js";
+import ProductDetails from "./views/ProductDetails.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -21,17 +22,16 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: Dashboard },
-        { path: "/posts", view: Posts },
-        { path: "/posts/:id", view: PostView },
-        { path: "/settings", view: Settings }
+        { path: "#", view: Products },
+        { path: "#products", view: Products },
+        { path: "#productDetails/:id", view: ProductDetails }
     ];
 
     // Test each route for potential match
     const potentialMatches = routes.map(route => {
         return {
             route: route,
-            result: location.pathname.match(pathToRegex(route.path))
+            result: location.hash.match(pathToRegex(route.path))
         };
     });
 
@@ -43,13 +43,44 @@ const router = async () => {
             result: [location.pathname]
         };
     }
-
+    //let fragmentId = location.hash.substr(1);
     const view = new match.route.view(getParams(match));
+    console.log(match);
+    if(match.route.path == '#productDetails/:id'){
+        document.querySelector("#details").innerHTML = await view.getHtml();
+    }
 
-    document.querySelector("#app").innerHTML = await view.getHtml();
+    if(match.route.path == '#products'){
+        document.querySelector("#catalog").innerHTML = await view.getHtml();
+    }
+
+
+    /*if(fragmentId == "products") {
+        alert("in product");
+        document.querySelector("#catalog").innerHTML = await view.getHtml();
+    }
+    if(fragmentId.match(new RegExp('^productDetails'))) {
+        console.log(view);
+        document.querySelector("#details").innerHTML = await view.getHtml();
+    }*/
 };
 
 window.addEventListener("popstate", router);
+
+/*window.addEventListener("hashchange",  function (){
+    console.log(location.hash);
+    let fragmentId = location.hash.substr(1);
+    if(location.hash.substr(1) == "products"){
+        getContent(fragmentId, function (content){
+            const view = new match.route.view(getParams(match));
+            document.querySelector("#app").innerHTML = view.getHtml();
+        })
+    }
+
+    if(location.hash.substr(1).match(new RegExp('^productDetails'))) {
+        document.querySelector("#app").innerHTML = "Details";
+    }
+});*/
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
@@ -61,3 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     router();
 });
+
+
+function getContent(fragmentId, callback) {
+    var request = new XMLHttpRequest();
+    request.onload = function() {
+        callback(request.responseText);
+    }
+
+    request.open("GET", "#"+fragmentId);
+    request.send(null);
+}

@@ -1,0 +1,123 @@
+{
+  "currentPageUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/contents/query?page=0&pageSize=25",
+  "items" : [ {
+    "contentNodes" : {
+      "bannerImage" : {
+        "altText" : null,
+        "fileName" : "slack (1).jpg.png",
+        "mediaType" : "Image",
+        "mimeType" : "image/png",
+        "nodeType" : "Media",
+        "resourceUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU/content",
+        "thumbnailUrl" : null,
+        "title" : "Graphql Test 2 Image",
+        "unauthenticatedUrl" : "/cms/delivery/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU",
+        "url" : "/cms/delivery/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU"
+      },
+      "body" : {
+        "nodeType" : "RichText",
+        "value" : "&lt;p&gt;Body&lt;/p&gt;"
+      },
+      "title" : {
+        "nodeType" : "NameField",
+        "value" : "Graphql Test 2 News"
+      }
+    },
+    "contentUrlName" : "graphql-test-2-news",
+    "language" : "en_US",
+    "managedContentId" : "20Y1R0000008OQ9UAM",
+    "publishedDate" : "2021-03-28T17:12:57.000Z",
+    "title" : "Graphql Test 2 News",
+    "type" : "news",
+    "typeLabel" : "News",
+    "unauthenticatedUrl" : "/cms/delivery/v50.0/0DB36000000XeFRGA0/contents/20Y1R0000008OQ9UAM?oid=00D36000000JfaDEAS"
+  }, {
+    "contentNodes" : {
+      "source" : {
+        "fileName" : "slack (1).jpg.png",
+        "isExternal" : false,
+        "mediaType" : "Image",
+        "mimeType" : "image/png",
+        "nodeType" : "MediaSource",
+        "referenceId" : "05T1R00001LEfj7",
+        "resourceUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU/content",
+        "unauthenticatedUrl" : "/cms/delivery/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU",
+        "url" : "/cms/delivery/media/MCIDYMXS3DXJBRVAFL2LHNTDKAVU"
+      },
+      "title" : {
+        "nodeType" : "NameField",
+        "value" : "Graphql Test 2 Image"
+      }
+    },
+    "contentUrlName" : "graphql-test-2-image",
+    "language" : "en_US",
+    "managedContentId" : "20Y1R0000008OPzUAM",
+    "publishedDate" : "2021-03-28T17:12:20.000Z",
+    "title" : "Graphql Test 2 Image",
+    "type" : "cms_image",
+    "typeLabel" : "Image",
+    "unauthenticatedUrl" : "/cms/delivery/v50.0/0DB36000000XeFRGA0/contents/20Y1R0000008OPzUAM?oid=00D36000000JfaDEAS"
+  }, {
+    "contentNodes" : {
+      "bannerImage" : {
+        "altText" : null,
+        "fileName" : "X259987e9c70190e18a0f8308a6f1f62c.jpg",
+        "mediaType" : "Image",
+        "mimeType" : "image/jpeg",
+        "nodeType" : "Media",
+        "resourceUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E/content",
+        "thumbnailUrl" : null,
+        "title" : "X259987e9c70190e18a0f8308a6f1f62c",
+        "unauthenticatedUrl" : "/cms/delivery/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E",
+        "url" : "/cms/delivery/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E"
+      },
+      "excerpt" : {
+        "nodeType" : "MultilineText",
+        "value" : "All About Addidas News"
+      },
+      "body" : {
+        "nodeType" : "RichText",
+        "value" : "&lt;p&gt;This is about Addidas News&lt;/p&gt;"
+      },
+      "title" : {
+        "nodeType" : "NameField",
+        "value" : "Addidas News"
+      }
+    },
+    "contentUrlName" : "addidas-news",
+    "language" : "en_US",
+    "managedContentId" : "20Y1R000000CaV9UAK",
+    "publishedDate" : "2020-12-28T05:57:50.000Z",
+    "title" : "Addidas News",
+    "type" : "news",
+    "typeLabel" : "News",
+    "unauthenticatedUrl" : "/cms/delivery/v50.0/0DB36000000XeFRGA0/contents/20Y1R000000CaV9UAK?oid=00D36000000JfaDEAS"
+  }, {
+    "contentNodes" : {
+      "source" : {
+        "fileName" : "X259987e9c70190e18a0f8308a6f1f62c.jpg",
+        "isExternal" : false,
+        "mediaType" : "Image",
+        "mimeType" : "image/jpeg",
+        "nodeType" : "MediaSource",
+        "referenceId" : "05T1R000018DZiY",
+        "resourceUrl" : "/services/data/v50.0/connect/cms/delivery/channels/0ap1R000000blKC/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E/content",
+        "unauthenticatedUrl" : "/cms/delivery/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E",
+        "url" : "/cms/delivery/media/MC5CO3P6JD7VB3RNZ3OUL4JI5C7E"
+      },
+      "title" : {
+        "nodeType" : "NameField",
+        "value" : "X259987e9c70190e18a0f8308a6f1f62c"
+      }
+    },
+    "contentUrlName" : "2af26cd1",
+    "language" : "en_US",
+    "managedContentId" : "20Y1R000000001EUAQ",
+    "publishedDate" : "2020-07-18T09:32:27.000Z",
+    "title" : "X259987e9c70190e18a0f8308a6f1f62c",
+    "type" : "cms_image",
+    "typeLabel" : "Image",
+    "unauthenticatedUrl" : "/cms/delivery/v50.0/0DB36000000XeFRGA0/contents/20Y1R000000001EUAQ?oid=00D36000000JfaDEAS"
+  } ],
+  "total" : 4
+}

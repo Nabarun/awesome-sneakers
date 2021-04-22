@@ -5,14 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Page App</title>
     <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="nav__link" data-link>Dashboard</a>
-        <a href="/posts" class="nav__link" data-link>Posts</a>
-        <a href="/settings" class="nav__link" data-link>Settings</a>
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active cen"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" align="center">
+            <div class="item active">
+                <img src="https://m.media-amazon.com/images/I/91M7X1MRzZL._AC_SR700,525_.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/I/814blkgS+gL._AC_SR700,525_.jpg" alt="Chicago">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/I/71MfueTPODL._AC_SR700,525_.jpg" alt="New York">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <nav class="navbar navbar-light bg-light">
+        <div id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Women's Shoes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Men's Shoes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Kid's Shoes</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+
+    <div class="header">
+        <h1>Awesome Sneakers</h1>
+        <p>This Earth Day, we’re spotlighting the brands, people & organizations helping build a better world for all of us.
+            Visit Goods for Good</p>
+    </div>
     <div id="app"></div>
+    <br>
+    <div id="catalog"></div>
+    <br>
+
+    <div id="details"></div>
+
     <script type="module" src="/static/js/index.js"></script>
 </body>
 </html>
